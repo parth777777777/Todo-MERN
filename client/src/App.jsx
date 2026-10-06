@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
 
+const API_URL = import.meta.env.VITE_API_URL || "localhost:5173";
+
 async function requestTodos(path, options) {
-  const response = await fetch(`/api/todos${path}`, {
+  const response = await fetch(`${API_URL}/api/todos${path}`, {
     headers: { 'Content-Type': 'application/json' },
     ...options,
   });
